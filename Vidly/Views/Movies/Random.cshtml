@@ -1,0 +1,24 @@
+﻿@model Vidly.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+}
+<script>
+
+</script>
+<style></style>
+<h2>Movie Random Action</h2>
+<h3>@Model.movie.Name is shared By : </h3>
+
+@if(Model.ListOfCustomers.Count>1)
+{
+    <h2>@Model.movie.Name is Popular</h2>
+}
+<ul>
+    @for(int i=0;i<Model.ListOfCustomers.Count();i++)
+    {
+        <li>@Model.ListOfCustomers[i].Name</li>
+    }
+    
+</ul>
+
+

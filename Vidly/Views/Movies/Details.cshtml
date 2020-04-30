@@ -1,0 +1,19 @@
+﻿@model Vidly.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name Details</h2>
+
+<ul list-group list-group-flush>
+    <li list-group-item>Name : @Model.Name</li>
+    <li list-group-item>Release Date : @Convert.ToDateTime(Model.ReleaseDate).ToString("MM/dd/yyyy").ToString()</li>
+    <li list-group-item>Movie Type : @Model.genre.Name</li>
+    @if (Model.DateAdded != null)
+    {
+        <li list-group-item>Date Added In Stock : @Model.DateAdded.Value.ToShortDateString()</li>
+    }
+    <li list-group-item>Number In Stock : @Model.NumberInStock</li>
+</ul>
+
